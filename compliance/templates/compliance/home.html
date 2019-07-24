@@ -1,0 +1,23 @@
+{% extends "compliance/base.html" %}
+{% block content %}
+{% for comp in mylist %}
+
+
+	  <article class="media content-section"> 	
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="{% url 'compli-detail' comp.id %}">COMPLIANCE: {{ comp.comp_id }}</a>
+		      <small class="text-muted">DATE RENEWAL : {{ comp.renewal }}</small>
+		    </div>
+
+		   <!--  <p class="article-content">LOCATION NAME: {{ comp.loc_name}}</p>
+		    <p class="article-content">COMPANY NAME: {{ comp.comp_name }}</p>
+		     -->
+			
+		    </div>
+
+	  </article>
+
+{% endfor %} 	  
+{% endblock content %}
+

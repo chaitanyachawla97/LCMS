@@ -1,0 +1,40 @@
+{% extends "compliance/base.html" %}
+{% block content %}
+
+
+
+	<article class="media content-section"> 	
+		<div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">COMPLIANCE: {{ object.comp_id }}</a>
+		      <small class="text-muted">DATE RENEWAL : {{ object.renewal }}</small>
+		    </div>
+
+		    <p class="article-content">LOCATION NAME: {{ object.loc_name}}</p>
+		    <p class="article-content">COMPANY NAME: {{ object.comp_name }}</p>
+		    <p class="article-content">MONTH: {{ object.month}}</p>
+		    <p class="article-content">CATEGORY: {{ object.category }}</p>
+		    <p class="article-content">LICENSE NUMBER: {{ object.license_no }}</p>
+		    <p class="article-content">LICENSE TYPE: {{ object.license_type }}</p>
+		    <p class="article-content">LAW AUTHORITY: {{ object.law_authority }}</p>
+		    <p class="article-content">DATE PURCHASE: {{ object.date_purchase }}</p>
+		    <p class="article-content">DATE EXPIRY: {{ object.date_expiry }}</p>
+		    <p class="article-content">PRESENT FEES: {{ object.present_fees }}</p>
+		    <p class="article-content">PRIMARY EMPLOYEE: {{ object.primary_emp }}</p>
+		    <p class="article-content">SECONDARY EMPLOYEE: {{ object.sec_emp }}</p>
+		    <p class="article-content">CUSTODY: {{ object.custody }}</p>
+
+		    
+			{% if object.user == user %}
+				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'compli-update' object.id %}">
+				Update</a>
+				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'compli-delete' object.id %}">
+				Delete</a>
+			{% endif %}
+		</div>
+
+	</article>
+
+	  
+{% endblock content %}
+
